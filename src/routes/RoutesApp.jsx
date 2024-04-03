@@ -4,18 +4,23 @@ import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import MyJob from "../pages/MyJob";
 import Button from '../components/Button';
-
+import { useTheme } from "../themes/ThemeContext";
 
 export default function RoutesApp() {
+    const { theme } = useTheme();
     return (
         <Router>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/myjob" element={<MyJob />} />
-            </Routes>
-            <Button />
+            <section className={`App ${theme}`}>
+                <div className="content">
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/myjob" element={<MyJob />} />
+                    </Routes>    
+                    <Button />
+                </div>
+            </section>
         </Router>
     )
 }

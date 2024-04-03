@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useTheme } from "../themes/ThemeContext";
 
 export default function Button() {
-    const { theme, toggleTheme } = useTheme();
+    const { toggleTheme } = useTheme();
     const [enable, setEnable] = useState(true);
 
     const handleTheme = () => {
@@ -11,7 +11,7 @@ export default function Button() {
     }
     
     return (
-        <button onClick={handleTheme} className={`App ${theme}`}>
+        <button onClick={handleTheme} className={enable ? 'dark' : 'light'}>
             {enable ? 'Activar' : 'Desactivar'} modo oscuro
         </button>  
     )

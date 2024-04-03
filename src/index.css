@@ -89,6 +89,16 @@ button:focus-visible {
   color: #ccc;
 }
 
+button .dark {
+  background-color: #242424;
+  color: #ccc;
+}
+
+button .light {
+  background-color: #242424;
+  color: #ccc;
+}
+
 .content {
   width: 300px;
 }
